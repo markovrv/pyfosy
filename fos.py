@@ -297,6 +297,9 @@ async def main():
         
     except Exception as e:
         print(f'\nОшибка: {str(e)}')
+        await importer.close()
+        print('\nЗавершение работы.')
+        
     finally:
     #     await importer.close()
     #     print('\nЗавершение работы.')
