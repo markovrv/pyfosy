@@ -76,6 +76,42 @@ class FOSImporter:
         await self._click_element(f'div[id="boundlist-1086-listEl"] li:nth-child({selected})')
         await self._wait(1000)
 
+    async def select_answer_type_practice(self):
+        """Выбор практического типа вопроса"""
+
+        element_id = await self.page.evaluate(f'''(text) => {{
+            const labels = document.getElementsByTagName('label');
+            for (let label of labels) {{
+                if (label.innerHTML === text) {{
+                    const nextElement = label.nextElementSibling;
+                    if (nextElement) {{
+                        if (nextElement.id) return nextElement.id;
+                        else return null;
+                    }} else return null;
+                }}
+            }}
+            return null;
+        }}''', "Вид вопроса")
+        
+        if element_id:
+            await self._click_element(f'input[id="{element_id}-inputEl"]')
+            await self._wait(300)
+
+            list_id = await self.page.evaluate(f'''(text) => {{
+                const listItems = document.getElementsByTagName('li');
+                for (let li of listItems) {{
+                    if (li.innerHTML === text) {{
+                    const grandParent = li.parentElement?.parentElement;
+                    return grandParent?.id || null;
+                    }}
+                }}
+                return null;
+            }}''', "Практический")
+
+            if list_id:
+                await self._click_element(f'div[id="{list_id}"] li:nth-child(2)')
+                await self._wait(300)
+
     async def select_subject(self) -> Tuple[Dict, int]:
         """Выбор предмета и возврат (информация о предмете, его индекс)"""
         await self._log('Получаем список предметов...')
@@ -123,6 +159,33 @@ class FOSImporter:
             await self._import_question(question, i, len(questions))
 
         return True
+    
+    async def _import_comp_string(self, comp_string):
+        """Импорт списка компетенций вопроса"""
+        elements = comp_string.split()
+        
+        # Создаем словарь для замены сокращений
+        replacements = {
+            'В': 'Входной контроль',
+            'Т': 'Текущий контроль',
+            'О': 'Остаточные знания',
+            'П': 'Промежуточная аттестация',
+            'И': 'Итоговая аттестация',
+        }
+        
+        # Заменяем элементы в массиве согласно словарю
+        comps = [replacements.get(element, element) for element in elements]
+        
+        if not comps:
+            return
+        
+        for _, comp in enumerate(comps, 1):
+            # Если указано, что вопрос практический
+            if comp == 'У' or comp == 'Н':
+                await self.select_answer_type_practice()
+            else:
+                await select_checkbox(self.page, comp)
+                await self._wait(300)
 
     async def _import_question(self, question: Dict, current: int, total: int):
         """Импорт одного вопроса"""
@@ -133,7 +196,10 @@ class FOSImporter:
         
         await self._set_textarea_value(question['text'])
         await self._wait(300)
-        
+
+        await self._import_comp_string(question['title'])
+        await self._wait(300)
+
         await press_button(self.page, 'Сохранить')
         await self._wait(500)
         
