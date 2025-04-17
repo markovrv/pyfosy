@@ -12,6 +12,7 @@ class FOSImporter:
         self.browser = None
         self.page = None
         self.debug = True
+        self.complist = ''
 
     async def init_browser(self):
         """Инициализация браузера"""
@@ -146,6 +147,24 @@ class FOSImporter:
         await self._wait(1000)
         await self._wait_for_selector('input[id="numberfield-1035-inputEl"]')
 
+    async def settings_competetions(self):
+        """Ввод настроек компетенций"""
+        variants = ['Считать компетенции каждого вопроса из файла', 'Ввести список компетенций самостоятельно', 'Не вводить компетенции']
+        selected_variant = await self._select_from_list(
+            variants, 
+            'варианта',
+            show_index=True
+        )
+        
+        await self._log(f'Выбран вариант: {variants[selected_variant]}')
+
+        if selected_variant == 0:
+            self.complist = 'auto'
+        elif selected_variant == 1:
+            self.complist = input('Введите список компетенций через пробел: ')
+        else:
+            self.complist = 'none'
+
     async def import_questions(self):
         """Импорт вопросов из GIFT-файла"""
         file_path = input('Введите имя GIFT-файла: ')
@@ -197,7 +216,12 @@ class FOSImporter:
         await self._set_textarea_value(question['text'])
         await self._wait(300)
 
-        await self._import_comp_string(question['title'])
+        if self.complist == 'auto':
+            await self._import_comp_string(question['title'])
+        elif self.complist == 'none':
+            pass
+        else:
+            await self._import_comp_string(self.complist)
         await self._wait(300)
 
         await press_button(self.page, 'Сохранить')
@@ -359,8 +383,12 @@ async def main():
         await importer.select_department()
         await importer.select_specialty()
         await importer.open_fos_tab()
-        await importer.import_questions()
-        
+
+        while True:
+            await importer.settings_competetions()
+            await importer.import_questions()
+            await importer._wait(1000)
+
     except Exception as e:
         print(f'\nОшибка: {str(e)}')
         await importer.close()
@@ -369,8 +397,7 @@ async def main():
     finally:
     #     await importer.close()
     #     print('\nЗавершение работы.')
-        while True:
-            await importer._wait(1000)
+        pass
 
 if __name__ == '__main__':
     asyncio.get_event_loop().run_until_complete(main())
