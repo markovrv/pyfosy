@@ -3,10 +3,14 @@ import re
 import getpass
 from pyppeteer import launch
 from typing import List, Dict, Tuple
+from dotenv import load_dotenv
+import os
+
+# Загружаем переменные из .env файла
+load_dotenv()
 
 # Путь к исполняемому файлу браузера (по умолчанию для Windows)
-CHROME_PATH = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
-
+CHROME_PATH = os.getenv('CHROME_PATH', 'C:/Program Files/Google/Chrome/Application/chrome.exe')
 class FOSImporter:
     def __init__(self):
         self.browser = None
@@ -28,8 +32,8 @@ class FOSImporter:
     async def get_credentials(self) -> Dict[str, str]:
         """Запрос учетных данных у пользователя"""
         print("\nВведите учетные данные для авторизации:")
-        username = input("Логин: ").strip()
-        password = getpass.getpass("Пароль: ").strip()
+        username = os.getenv('LOGIN', input("Логин: ").strip())
+        password = os.getenv('PASSWORD', getpass.getpass("Пароль: ").strip())
         return {'username': username, 'password': password}
 
     async def navigate_to_site(self, credentials: Dict[str, str]):
@@ -45,10 +49,10 @@ class FOSImporter:
     async def select_fos_section(self):
         """Выбор раздела ФОС"""
         await self._log('Выбираем раздел ФОС...')
-        await self._wait(200)
+        await self._wait(500)
         await self._click_element('input[id="O19_id-inputEl"]')
         await self._wait_for_selector('li[class="x-boundlist-item"]')
-        await self._wait(200)
+        await self._wait(500)
         await self._click_element('li[class="x-boundlist-item"]:nth-child(2)')
         await self._wait_for_selector('input[id="ODF_id-inputEl"]')
         await self._wait(300)
@@ -61,7 +65,7 @@ class FOSImporter:
         await self._wait(300)
 
         departments = await self._get_list_items('div[id="boundlist-1083-listEl"] li')
-        selected = await self._select_from_list(departments, 'кафедры')
+        selected = await self._select_from_list(departments, 'кафедры', 'DEPARTMENT')
         await self._click_element(f'div[id="boundlist-1083-listEl"] li:nth-child({selected})')
         await self._wait(300)
 
@@ -73,7 +77,7 @@ class FOSImporter:
         await self._wait(300)
 
         specialties = await self._get_list_items('div[id="boundlist-1086-listEl"] li')
-        selected = await self._select_from_list(specialties, 'специальности')
+        selected = await self._select_from_list(specialties, 'специальности', "SPECIALTY")
         await self._click_element(f'div[id="boundlist-1086-listEl"] li:nth-child({selected})')
         await self._wait(1000)
 
@@ -131,6 +135,7 @@ class FOSImporter:
         selected_index = await self._select_from_list(
             [s['name'] for s in subjects], 
             'предмета',
+            "SUBJECT",
             show_index=True
         )
         
@@ -140,6 +145,7 @@ class FOSImporter:
 
     async def open_fos_tab(self):
         """Открытие вкладки с ФОС"""
+        await self._wait(1000)
         subject_index = await self.select_subject()
         await self._click_element(f'tr[id="gridview-1017-record-{subject_index}"]')
         await self._wait(300)
@@ -191,6 +197,12 @@ class FOSImporter:
             'П': 'Промежуточная аттестация',
             'И': 'Итоговая аттестация',
         }
+
+        hashes = {
+            "З" : "#знания ",
+            "У" : "#умения ",
+            "Н" : "#навыки ",
+        }
         
         # Заменяем элементы в массиве согласно словарю
         comps = [replacements.get(element, element) for element in elements]
@@ -198,6 +210,8 @@ class FOSImporter:
         if not comps:
             return
         
+        # Формируем комментарий из хештегов
+        comment = ''
         for _, comp in enumerate(comps, 1):
             # Если указано, что вопрос практический
             if comp == 'У' or comp == 'Н':
@@ -206,15 +220,27 @@ class FOSImporter:
                 await select_checkbox(self.page, comp)
                 await self._wait(300)
 
+            # Дублируем типы вопросов в комментарий в виде хештега
+            if comp == 'У':
+                comment += hashes['У']
+            elif comp == 'Н':
+                comment += hashes['Н']
+            elif comp == 'З':
+                comment += hashes['З']
+
+        if comment:
+            await self._set_textarea_value(comment, number=1)
+            await self._wait(300)            
+
     async def _import_question(self, question: Dict, current: int, total: int):
         """Импорт одного вопроса"""
         await self._log(f'Импорт вопроса {current}/{total}')
         
         await press_button(self.page, 'Добавить вопрос')
-        await self._wait(300)
+        await self._wait(500)
         
         await self._set_textarea_value(question['text'])
-        await self._wait(300)
+        await self._wait(100)
 
         if self.complist == 'auto':
             await self._import_comp_string(question['title'])
@@ -222,19 +248,22 @@ class FOSImporter:
             pass
         else:
             await self._import_comp_string(self.complist)
-        await self._wait(300)
+        await self._wait(100)
 
         await press_button(self.page, 'Сохранить')
         await self._wait(500)
         
-        await press_button(self.page, 'Ответы')
-        await self._wait(500)
-        
-        for j, option in enumerate(question['options'], 1):
-            await self._import_answer_option(option, j)
-        
-        await press_button(self.page, 'Закрыть')
-        await self._wait(500)
+        if len(question['options']) > 0:
+
+            await press_button(self.page, 'Ответы')
+            await self._wait(500)
+            
+            for j, option in enumerate(question['options'], 1):
+                await self._import_answer_option(option, j)
+
+            await self._wait(300)
+            await press_button(self.page, 'Закрыть')
+            await self._wait(300)
 
     async def _import_answer_option(self, option: Dict, index: int):
         """Импорт варианта ответа"""
@@ -242,11 +271,11 @@ class FOSImporter:
         await self._wait(500)
         
         await self._set_textarea_value(option['text'])
-        await self._wait(300)
+        await self._wait(100)
         
         if option['isCorrect']:
             await select_checkbox(self.page, 'Правильный ответ')
-            await self._wait(300)
+            await self._wait(100)
         
         await press_button(self.page, 'Сохранить')
         await self._wait(500)
@@ -295,7 +324,7 @@ class FOSImporter:
             return Array.from(rows).map(row => row.innerText)
         }}''')
 
-    async def _select_from_list(self, items: List[str], name: str, show_index=False) -> int:
+    async def _select_from_list(self, items: List[str], name: str, envcode: str = "", show_index: bool = False) -> int:
         """Выбор элемента из списка"""
         prompt = f'Выберите номер {name}:\n'
         prompt += '\n'.join(
@@ -306,7 +335,7 @@ class FOSImporter:
         
         while True:
             try:
-                selected = int(input(prompt))
+                selected = int(os.getenv(envcode, input(prompt)))
                 if show_index:
                     if 0 <= selected < len(items):
                         return selected
@@ -340,10 +369,10 @@ class FOSImporter:
         await self.page.waitForSelector(selector)
         await self.page.evaluate(f'(val) => document.querySelector(`{selector}`).value = val', value)
 
-    async def _set_textarea_value(self, value: str):
+    async def _set_textarea_value(self, value: str, number = 0):
         """Установка значения textarea"""
         await self.page.waitForSelector('textarea')
-        await self.page.evaluate('(val) => document.querySelector("textarea").value = val', value)
+        await self.page.evaluate('(data) => document.querySelectorAll("textarea")[data[1]].value = data[0]', [value, number])
 
     async def close(self):
         """Закрытие браузера"""
