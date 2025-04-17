@@ -384,7 +384,7 @@ async def main():
         await importer.select_specialty()
         await importer.open_fos_tab()
 
-        while True:
+        while input('Вы хотите загрузить GIFT файл? (y/n): ').lower() != 'n':
             await importer.settings_competetions()
             await importer.import_questions()
             await importer._wait(1000)
@@ -395,9 +395,8 @@ async def main():
         print('\nЗавершение работы.')
         
     finally:
-    #     await importer.close()
-    #     print('\nЗавершение работы.')
-        pass
+        await importer.close()
+        print('\nЗавершение работы.')
 
 if __name__ == '__main__':
     asyncio.get_event_loop().run_until_complete(main())
