@@ -49,7 +49,7 @@ class FOSImporter:
     async def select_fos_section(self):
         """Выбор раздела ФОС"""
         await self._log('Выбираем раздел ФОС...')
-        await self._wait(500)
+        await self._wait(700)
         await self._click_element('input[id="O19_id-inputEl"]')
         await self._wait_for_selector('li[class="x-boundlist-item"]')
         await self._wait(500)
@@ -62,19 +62,19 @@ class FOSImporter:
         await self._log('Выбираем кафедру...')
         await self._click_element('input[id="ODF_id-inputEl"]')
         await self._wait_for_selector('div[id="boundlist-1083-listEl"]')
-        await self._wait(300)
+        await self._wait(1000)
 
         departments = await self._get_list_items('div[id="boundlist-1083-listEl"] li')
         selected = await self._select_from_list(departments, 'кафедры', 'DEPARTMENT')
         await self._click_element(f'div[id="boundlist-1083-listEl"] li:nth-child({selected})')
-        await self._wait(300)
+        await self._wait(1000)
 
     async def select_specialty(self):
         """Выбор специальности"""
         await self._log('Выбираем специальность...')
         await self._click_element('input[id="OD0_id-inputEl"]')
         await self._wait_for_selector('div[id="boundlist-1086-listEl"]')
-        await self._wait(300)
+        await self._wait(1000)
 
         specialties = await self._get_list_items('div[id="boundlist-1086-listEl"] li')
         selected = await self._select_from_list(specialties, 'специальности', "SPECIALTY")
@@ -173,7 +173,7 @@ class FOSImporter:
 
     async def import_questions(self):
         """Импорт вопросов из GIFT-файла"""
-        file_path = input('Введите имя GIFT-файла: ')
+        file_path = input('Введите имя GIFT-файла (без расширения и точки): ') +  '.gift'
         questions = await self._parse_gift_file(file_path)
         await self._log(f'Найдено {len(questions)} вопросов для импорта')
 
@@ -240,7 +240,7 @@ class FOSImporter:
         await self._wait(500)
         
         await self._set_textarea_value(question['text'])
-        await self._wait(100)
+        await self._wait(300)
 
         if self.complist == 'auto':
             await self._import_comp_string(question['title'])
@@ -248,10 +248,10 @@ class FOSImporter:
             pass
         else:
             await self._import_comp_string(self.complist)
-        await self._wait(100)
+        await self._wait(300)
 
         await press_button(self.page, 'Сохранить')
-        await self._wait(500)
+        await self._wait(1000)
         
         if len(question['options']) > 0:
 
@@ -263,7 +263,7 @@ class FOSImporter:
 
             await self._wait(300)
             await press_button(self.page, 'Закрыть')
-            await self._wait(300)
+            await self._wait(1000)
 
     async def _import_answer_option(self, option: Dict, index: int):
         """Импорт варианта ответа"""
@@ -271,14 +271,14 @@ class FOSImporter:
         await self._wait(500)
         
         await self._set_textarea_value(option['text'])
-        await self._wait(100)
+        await self._wait(300)
         
         if option['isCorrect']:
             await select_checkbox(self.page, 'Правильный ответ')
-            await self._wait(100)
+            await self._wait(300)
         
         await press_button(self.page, 'Сохранить')
-        await self._wait(500)
+        await self._wait(1000)
 
     async def _parse_gift_file(self, file_path: str) -> List[Dict]:
         """Парсинг GIFT-файла"""
@@ -313,7 +313,7 @@ class FOSImporter:
             
             if current_question:
                 questions.append(current_question)
-            return questions
+            return questions[42:]
         except Exception as e:
             raise Exception(f'Ошибка чтения GIFT-файла: {str(e)}')
 
