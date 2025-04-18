@@ -313,7 +313,15 @@ class FOSImporter:
             
             if current_question:
                 questions.append(current_question)
-            return questions[42:]
+
+            start_from = input("Сколько вопросов пропустить с начала файла? (0 - по умолчанию)")
+            if not start_from:
+                start_from = 0
+            else:
+                start_from = int(start_from)
+
+            return questions[start_from:]
+
         except Exception as e:
             raise Exception(f'Ошибка чтения GIFT-файла: {str(e)}')
 
