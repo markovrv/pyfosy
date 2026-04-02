@@ -1,3 +1,12 @@
 venv
+.venv-build
 .env
 *.gift
+build/
+dist/
+*.spec.bak
+.kilo
+__pycache__/
+build_exe.ps1
+FOSImporter.spec
+start.ps1
