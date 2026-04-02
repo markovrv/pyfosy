@@ -1,0 +1,1208 @@
+<!DOCTYPE html><html><head>
+      <title>USER_MANUAL</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\Роман\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.22\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="fos-importer-v30--руководство-пользователя">FOS Importer v3.0 — Руководство пользователя </h1>
+<p><strong>Автоматизированный импорт вопросов ФОС в систему ISS ВятГУ</strong></p>
+<p>Версия: 3.0<br>
+Автор: Марков Р. В.</p>
+<hr>
+<h2 id="содержание">Содержание </h2>
+<ol>
+<li><a href="#1-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">Введение</a></li>
+<li><a href="#2-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B5-%D1%82%D1%80%D0%B5%D0%B1%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%B8-%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8">Системные требования и зависимости</a></li>
+<li><a href="#3-%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0">Подготовка окружения и установка</a></li>
+<li><a href="#4-%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B0-%D1%87%D0%B5%D1%80%D0%B5%D0%B7-fosimporterexe">Порядок запуска через FOSImporter.exe</a></li>
+<li><a href="#5-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D1%84%D0%B5%D0%B9%D1%81-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">Интерфейс пользователя</a></li>
+<li><a href="#6-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B8-%D0%B8-%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B5-%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D1%8B">Основные функции и рабочие процессы</a></li>
+<li><a href="#7-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%B8-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B">Конфигурация и параметры</a></li>
+<li><a href="#8-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8">Работа с данными</a></li>
+<li><a href="#9-%D0%B1%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C-%D0%B8-%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Безопасность и лицензирование</a></li>
+<li><a href="#10-%D0%B6%D1%83%D1%80%D0%BD%D0%B0%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8-%D0%B4%D0%B8%D0%B0%D0%B3%D0%BD%D0%BE%D1%81%D1%82%D0%B8%D0%BA%D0%B0">Журналирование и диагностика</a></li>
+<li><a href="#11-%D1%83%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B5%D0%BF%D0%BE%D0%BB%D0%B0%D0%B4%D0%BE%D0%BA">Устранение неполадок</a></li>
+<li><a href="#12-%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B8-%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">Обновления и обслуживание</a></li>
+<li><a href="#13-%D1%87%D0%B0%D1%81%D1%82%D0%BE-%D0%B7%D0%B0%D0%B4%D0%B0%D0%B2%D0%B0%D0%B5%D0%BC%D1%8B%D0%B5-%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B-faq">Часто задаваемые вопросы (FAQ)</a></li>
+<li><a href="#14-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B-%D1%81%D1%86%D0%B5%D0%BD%D0%B0%D1%80%D0%B8%D0%B5%D0%B2-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F">Примеры сценариев использования</a></li>
+<li><a href="#15-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D1%8B-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D0%B0-%D0%B8-%D0%BA%D0%BE%D0%BD%D0%B2%D0%B5%D1%80%D1%82%D0%B0%D1%86%D0%B8%D1%8F">Форматы вывода и конвертация</a></li>
+<li><a href="#16-%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81-%D1%83%D1%82%D0%BE%D1%87%D0%BD%D1%8F%D1%8E%D1%89%D0%B5%D0%B9-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8">Запрос уточняющей информации</a></li>
+<li><a href="#17-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-a-%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0-gift-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0">Приложение A: Структура GIFT-файла</a></li>
+<li><a href="#18-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-b-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BA%D0%BE%D0%B4%D0%BE%D0%B2-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B5%D1%82%D0%B5%D0%BD%D1%86%D0%B8%D0%B9">Приложение B: Расшифровка кодов компетенций</a></li>
+</ol>
+<hr>
+<h2 id="1-введение">1. Введение </h2>
+<p><strong>FOS Importer</strong> — программное средство для автоматизированного импорта вопросов в формате GIFT в информационную систему поддержки обучения (ISS) ВятГУ (<code>https://iss.vyatsu.ru/kaf/</code>).</p>
+<p>Программа выполняет следующие задачи:</p>
+<ul>
+<li>Авторизацию в системе ISS ВятГУ через автоматизированный браузер Chrome</li>
+<li>Последовательный выбор кафедры, специальности и предмета</li>
+<li>Парсинг GIFT-файла с вопросами (включая коды компетенций и типы контроля)</li>
+<li>Последовательный импорт каждого вопроса с вариантами ответов в систему ФОС</li>
+</ul>
+<p>Инструмент предназначен для преподавателей и сотрудников кафедр, которым необходимо загрузить большое количество тестовых вопросов в систему без ручного ввода через веб-интерфейс.</p>
+<h3 id="ключевые-особенности-версии-30">Ключевые особенности версии 3.0 </h3>
+<table>
+<thead>
+<tr>
+<th>Особенность</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GUI</td>
+<td>Графический интерфейс на базе tkinter, окно 450x750</td>
+</tr>
+<tr>
+<td>Автоматизация</td>
+<td>Управление браузером Chrome через pyppeteer</td>
+</tr>
+<tr>
+<td>Асинхронность</td>
+<td>Async/await операции в фоновом потоке с собственным event loop</td>
+</tr>
+<tr>
+<td>Поставка</td>
+<td>Единый EXE-файл (PyInstaller, <code>console=False</code>) — ничего устанавливать не нужно</td>
+</tr>
+<tr>
+<td>GIFT</td>
+<td>Поддержка формата GIFT с кодами компетенций в заголовках</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-системные-требования-и-зависимости">2. Системные требования и зависимости </h2>
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Требование</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Операционная система</td>
+<td>Windows 10 / 11 (64-bit)</td>
+</tr>
+<tr>
+<td>Браузер</td>
+<td>Google Chrome (установленный)</td>
+</tr>
+<tr>
+<td>Свободное место</td>
+<td>~150 МБ (для EXE и временных файлов pyppeteer)</td>
+</tr>
+<tr>
+<td>Сеть</td>
+<td>Доступ к <code>https://iss.vyatsu.ru/</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-установка-и-запуск">3. Установка и запуск </h2>
+<ol>
+<li>Скопируйте файл <code>FOSImporter.exe</code>.</li>
+<li>Убедитесь, что Google Chrome установлен на компьютере.</li>
+<li>Проверьте/отредактируйте файл <code>.env</code> (см. раздел <a href="#7-%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D0%B8-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B">7. Конфигурация и параметры</a>).</li>
+<li>Запустите <code>FOSImporter.exe</code> двойным щелчком.</li>
+</ol>
+<h2 id="4-порядок-запуска">4. Порядок запуска </h2>
+<h3 id="41-перед-первым-запуском">4.1. Перед первым запуском </h3>
+<ol>
+<li>Убедитесь, что Google Chrome установлен. Путь по умолчанию:<pre data-role="codeBlock" data-info="" class="language-text"><code>C:/Program Files/Google/Chrome/Application/chrome.exe
+</code></pre></li>
+<li>Если Chrome установлен в другом месте, отредактируйте файл <code>.env</code>:<pre data-role="codeBlock" data-info="" class="language-text"><code>CHROME_PATH=D:/MyApps/Chrome/chrome.exe
+</code></pre></li>
+<li>При необходимости укажите логин в <code>.env</code> для автозаполнения:<pre data-role="codeBlock" data-info="" class="language-text"><code>LOGIN=your_login
+</code></pre><blockquote>
+<p><strong>Рекомендация:</strong> не сохраняйте пароль в <code>.env</code> — вводите его вручную для безопасности.</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="42-запуск-и-завершение">4.2. Запуск и завершение </h3>
+<p>Дважды щёлкните по <code>FOSImporter.exe</code>. Откроется главное окно программы размером 450x750 пикселей, автоматически размещающееся у правого края экрана.</p>
+<p>Для завершения работы закройте окно кнопкой <strong>X</strong> в заголовке. Программа автоматически закроет браузер Chrome и освободит ресурсы.</p>
+<h2 id="5-интерфейс-пользователя">5. Интерфейс пользователя </h2>
+<p>Главное окно программы содержит следующие элементы, расположенные сверху вниз:</p>
+<h3 id="51-заголовок-окна">5.1. Заголовок окна </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>FOS Importer - Полнофункциональная версия v3.0
+</code></pre><h3 id="52-блок-учетные-данные-вятгу">5.2. Блок «Учетные данные ВятГУ» </h3>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Логин</td>
+<td>Текстовое поле</td>
+<td>Логин для входа в ISS ВятГУ. Автозаполняется из <code>.env</code></td>
+</tr>
+<tr>
+<td>Пароль</td>
+<td>Текстовое поле (скрытый ввод)</td>
+<td>Пароль. Отображается звёздочками. Автозаполняется из <code>.env</code></td>
+</tr>
+<tr>
+<td>Авторизация</td>
+<td>Кнопка</td>
+<td>Запускает процесс авторизации в браузере</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-блок-выбор-gift-файла">5.3. Блок «Выбор GIFT файла» </h3>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GIFT файл</td>
+<td>Текстовое поле</td>
+<td>Путь к выбранному GIFT-файлу</td>
+</tr>
+<tr>
+<td>Обзор...</td>
+<td>Кнопка</td>
+<td>Открывает диалог выбора файлов (*.gift, *.txt, *)</td>
+</tr>
+<tr>
+<td>Сгенерировать файл</td>
+<td>Кнопка</td>
+<td>Открывает веб-генератор GIFT-файлов в отдельном окне Chrome</td>
+</tr>
+<tr>
+<td>Информация о файле</td>
+<td>Метка</td>
+<td>Отображает количество найденных вопросов после выбора файла</td>
+</tr>
+</tbody>
+</table>
+<h3 id="54-блок-параметры-импорта-доступны-после-авторизации">5.4. Блок «Параметры импорта (доступны после авторизации)» </h3>
+<p>Блок активируется после успешной авторизации. Все выпадающие списки имеют режим <code>readonly</code> (значение выбирается только из списка).</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Кафедра</td>
+<td>Combobox (readonly)</td>
+<td>Список кафедр загружается из ISS после авторизации</td>
+</tr>
+<tr>
+<td>Специальность</td>
+<td>Combobox (readonly)</td>
+<td>Заполняется после выбора кафедры</td>
+</tr>
+<tr>
+<td>Предмет</td>
+<td>Combobox (readonly)</td>
+<td>Заполняется после выбора специальности</td>
+</tr>
+</tbody>
+</table>
+<h3 id="55-блок-статус-операции">5.5. Блок «Статус операции» </h3>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Тип</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Статус</td>
+<td>Метка (жирный шрифт)</td>
+<td>Текущее состояние: «Готов к работе», «Авторизация успешна», «Импорт вопроса 3/15» и т.д.</td>
+</tr>
+<tr>
+<td>Прогресс-бар</td>
+<td>Progressbar</td>
+<td>Индикатор прогресса (mode: determinate). Отображается при авторизации и импорте</td>
+</tr>
+</tbody>
+</table>
+<h3 id="56-кнопки-управления">5.6. Кнопки управления </h3>
+<table>
+<thead>
+<tr>
+<th>Кнопка</th>
+<th>Состояние по умолчанию</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Начать импорт</td>
+<td>Неактивна</td>
+<td>Активируется после выбора предмета. Запускает импорт вопросов</td>
+</tr>
+<tr>
+<td>Остановить</td>
+<td>Неактивна</td>
+<td>Активируется во время импорта. Останавливает процесс и возвращает на основную вкладку</td>
+</tr>
+<tr>
+<td>Тестовый режим</td>
+<td>Активна</td>
+<td>Заполняет все поля демоданными для тестирования интерфейса без реальной авторизации</td>
+</tr>
+</tbody>
+</table>
+<h3 id="57-панель-журнал-операций">5.7. Панель «Журнал операций» </h3>
+<h2 id="6-основные-функции-и-рабочие-процессы">6. Основные функции и рабочие процессы </h2>
+<h3 id="61-полный-цикл-импорта-пошаговая-инструкция">6.1. Полный цикл импорта (пошаговая инструкция) </h3>
+<h4 id="шаг-1-ввод-учётных-данных">Шаг 1: Ввод учётных данных </h4>
+<ol>
+<li>В поле <strong>Логин</strong> введите имя пользователя ISS ВятГУ.</li>
+<li>В поле <strong>Пароль</strong> введите пароль.</li>
+<li>Нажмите кнопку <strong>Авторизация</strong>.</li>
+</ol>
+<blockquote>
+<p>Если логин/пароль предварительно заданы в <code>.env</code>, поля будут заполнены автоматически.</p>
+</blockquote>
+<h4 id="шаг-2-авторизация-в-системе">Шаг 2: Авторизация в системе </h4>
+<p>После нажатия кнопки «Авторизация» программа:</p>
+<ol>
+<li>Запускает браузер Google Chrome (окно браузера видно пользователю)</li>
+<li>Переходит на <code>https://iss.vyatsu.ru/kaf/</code></li>
+<li>Вводит логин и пароль в форму авторизации</li>
+<li>Нажимает кнопку входа</li>
+<li>Выбирает раздел «ФОС»</li>
+<li>Загружает список кафедр</li>
+</ol>
+<p>Прогресс-бар отображает ход авторизации: 10% → 30% → 50% → 70% → 100%.</p>
+<p>При успешной авторизации:</p>
+<ul>
+<li>Статус: «Авторизация успешна. Выберите кафедру.»</li>
+<li>Список кафедр заполняется в выпадающем списке</li>
+<li>Блок «Параметры импорта» становится активным</li>
+</ul>
+<h4 id="шаг-3-выбор-кафедры">Шаг 3: Выбор кафедры </h4>
+<ol>
+<li>Раскройте выпадающий список <strong>Кафедра</strong>.</li>
+<li>Выберите нужную кафедру из списка.</li>
+<li>Программа автоматически загрузит список специальностей для выбранной кафедры.</li>
+</ol>
+<h4 id="шаг-4-выбор-специальности">Шаг 4: Выбор специальности </h4>
+<ol>
+<li>Раскройте выпадающий список <strong>Специальность</strong>.</li>
+<li>Выберите нужную специальность.</li>
+<li>Программа автоматически загрузит список предметов.</li>
+</ol>
+<h4 id="шаг-5-выбор-предмета">Шаг 5: Выбор предмета </h4>
+<ol>
+<li>Раскройте выпадающий список <strong>Предмет</strong>.</li>
+<li>Выберите предмет, в который будут импортироваться вопросы.</li>
+<li>Кнопка <strong>Начать импорт</strong> активируется.</li>
+</ol>
+<h4 id="шаг-6-выбор-gift-файла">Шаг 6: Выбор GIFT-файла </h4>
+<ol>
+<li>Нажмите кнопку <strong>Обзор...</strong></li>
+<li>В диалоге выбора файлов найдите и выберите GIFT-файл (*.gift).</li>
+<li>После выбора файла отобразится количество найденных вопросов.</li>
+</ol>
+<p>Или нажмите <strong>Сгенерировать файл</strong>, чтобы открыть веб-генератор в отдельном окне браузера.</p>
+<h4 id="шаг-7-запуск-импорта">Шаг 7: Запуск импорта </h4>
+<ol>
+<li>Нажмите кнопку <strong>Начать импорт</strong>.</li>
+<li>Программа последовательно импортирует каждый вопрос:
+<ul>
+<li>Нажимает кнопку «Добавить вопрос»</li>
+<li>Вводит текст вопроса</li>
+<li>Обрабатывает коды компетенций из заголовка (ставит чекбоксы, выбирает тип вопроса)</li>
+<li>Сохраняет вопрос</li>
+<li>Если есть варианты ответов — открывает модальное окно «Ответы», добавляет каждый вариант, отмечает правильные</li>
+<li>Закрывает модальное окно ответов</li>
+</ul>
+</li>
+<li>По завершении отображается диалог с результатом импорта.</li>
+</ol>
+<h4 id="шаг-8-завершение">Шаг 8: Завершение </h4>
+<p>Программа возвращает на основную вкладку ISS. Пользователь может выбрать другой предмет или файл и начать новый импорт.</p>
+<h3 id="62-тестовый-режим">6.2. Тестовый режим </h3>
+<p>Нажмите кнопку <strong>Тестовый режим</strong> для заполнения всех полей демоданными:</p>
+<ul>
+<li>Логин: <code>test_user</code> (если поле пустое)</li>
+<li>Пароль: <code>test_password</code> (если поле пустое)</li>
+<li>Кафедра: «Кафедра информатики»</li>
+<li>Специальность: «09.03.01 Информатика и ВТ»</li>
+<li>Предмет: «Программирование»</li>
+<li>Файл: <code>test.gift</code> (если не выбран)</li>
+</ul>
+<p>Тестовый режим позволяет проверить интерфейс и логику импорта без реальной авторизации. Если нажать «Начать импорт» в тестовом режиме, импорт будет <strong>симулирован</strong> (без обращения к сайту).</p>
+<h3 id="63-остановка-импорта">6.3. Остановка импорта </h3>
+<p>Нажмите кнопку <strong>Остановить</strong> в процессе импорта:</p>
+<ul>
+<li>Текущий импорт прервется</li>
+<li>Программа вернётся на основную вкладку ISS в браузере</li>
+<li>В журнал будет записано сообщение «Импорт остановлен пользователем»</li>
+<li>Кнопки сбросятся в исходное состояние</li>
+</ul>
+<h3 id="64-открытие-генератора-gift-файлов">6.4. Открытие генератора GIFT-файлов </h3>
+<p>Кнопка <strong>Сгенерировать файл</strong> открывает веб-форму генератора в отдельном popup-окне браузера Chrome. Требуется предварительная авторизация.</p>
+<h2 id="7-конфигурация-и-параметры">7. Конфигурация и параметры </h2>
+<h3 id="71-файл-env">7.1. Файл .env </h3>
+<p>Конфигурация программы задаётся в файле <code>.env</code>, который должен находиться в одной папке с <code>FOSImporter.exe</code>.</p>
+<h4 id="формат-файла">Формат файла </h4>
+<pre data-role="codeBlock" data-info="ini" class="language-ini ini"><code><span class="token key attr-name">CHROME_PATH</span><span class="token punctuation">=</span><span class="token value attr-value">C:/Program Files/Google/Chrome/Application/chrome.exe</span>
+<span class="token key attr-name">LOGIN</span><span class="token punctuation">=</span>
+<span class="token key attr-name">PASSWORD</span><span class="token punctuation">=</span>
+</code></pre><h4 id="параметры">Параметры </h4>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Обязательный</th>
+<th>Описание</th>
+<th>Значение по умолчанию</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CHROME_PATH</code></td>
+<td>Нет</td>
+<td>Полный путь к исполняемому файлу Google Chrome. Используется прямой слеш <code>/</code> как разделитель пути</td>
+<td><code>C:/Program Files/Google/Chrome/Application/chrome.exe</code></td>
+</tr>
+<tr>
+<td><code>LOGIN</code></td>
+<td>Нет</td>
+<td>Логин для автозаполнения поля «Логин» в интерфейсе</td>
+<td>Пустая строка</td>
+</tr>
+<tr>
+<td><code>PASSWORD</code></td>
+<td>Нет</td>
+<td>Пароль для автозаполнения поля «Пароль» в интерфейсе</td>
+<td>Пустая строка</td>
+</tr>
+</tbody>
+</table>
+<h4 id="примечания">Примечания </h4>
+<ul>
+<li>Программа ищет <code>.env</code> рядом с исполняемым файлом (в режиме EXE) или рядом со скриптом <code>gui_full.py</code>.</li>
+<li>Если <code>.env</code> отсутствует, используются значения по умолчанию.</li>
+<li>Пути к Chrome используют прямой слеш (<code>/</code>), а не обратный (<code>\</code>), даже на Windows.</li>
+<li>Если Chrome установлен нестандартно (например, Яндекс.Браузер, Chromium), укажите соответствующий путь.</li>
+</ul>
+<h2 id="8-работа-с-данными">8. Работа с данными </h2>
+<h3 id="81-формат-gift-файла">8.1. Формат GIFT-файла </h3>
+<p>GIFT (General Import Format Technology) — текстовый формат для представления тестовых вопросов, используемый в LMS-системах (Moodle, ISS и др.).</p>
+<h4 id="базовый-синтаксис">Базовый синтаксис </h4>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>::Коды компетенций::Текст вопроса{
+    =Правильный ответ
+    ~Неправильный ответ 1
+    ~Неправильный ответ 2
+    ~Неправильный ответ 3
+}
+</code></pre><h4 id="элементы-формата">Элементы формата </h4>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>::Заголовок::</code></td>
+<td>Коды компетенций и типов контроля, разделённые пробелами</td>
+</tr>
+<tr>
+<td><code>Текст вопроса</code></td>
+<td>Формулировка вопроса (после второго <code>::</code> и до <code>{</code>)</td>
+</tr>
+<tr>
+<td><code>{</code> и <code>}</code></td>
+<td>Границы блока ответов</td>
+</tr>
+<tr>
+<td><code>=Ответ</code></td>
+<td>Правильный вариант ответа (может быть несколько)</td>
+</tr>
+<tr>
+<td><code>~Ответ</code></td>
+<td>Неправильный вариант ответа</td>
+</tr>
+<tr>
+<td><code>// Комментарий</code></td>
+<td>Строка-комментарий (игнорируется парсером)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="пример-файла-с-вопросами-с-выбором-ответа">Пример файла с вопросами с выбором ответа </h4>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>// Пример вопроса с множественным выбором
+::В ОПК-1 ОПК-3::Какой язык программирования вы изучаете?{
+    =Python
+    ~Java
+    ~C++
+    ~JavaScript
+}
+</code></pre><h4 id="пример-открытого-вопроса-без-вариантов-ответа">Пример открытого вопроса (без вариантов ответа) </h4>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>::Т У ПК-1 ПК-2::Сколько будет 2+2?{
+}
+</code></pre><h3 id="82-коды-компетенций-в-заголовках">8.2. Коды компетенций в заголовках </h3>
+<p>Заголовок вопроса (между <code>::</code> и <code>::</code>) содержит коды, которые программа автоматически преобразует в настройки компетенций в ISS.</p>
+<h4 id="коды-типа-контроля">Коды типа контроля </h4>
+<table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Расшифровка</th>
+<th>Действие в программе</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>В</code></td>
+<td>Входной контроль</td>
+<td>Ставится чекбокс «Входной контроль»</td>
+</tr>
+<tr>
+<td><code>Т</code></td>
+<td>Текущий контроль</td>
+<td>Ставится чекбокс «Текущий контроль»</td>
+</tr>
+<tr>
+<td><code>О</code></td>
+<td>Остаточные знания</td>
+<td>Ставится чекбокс «Остаточные знания»</td>
+</tr>
+<tr>
+<td><code>П</code></td>
+<td>Промежуточная аттестация</td>
+<td>Ставится чекбокс «Промежуточная аттестация»</td>
+</tr>
+<tr>
+<td><code>И</code></td>
+<td>Итоговая аттестация</td>
+<td>Ставится чекбокс «Итоговая аттестация»</td>
+</tr>
+</tbody>
+</table>
+<h4 id="коды-типа-знаний">Коды типа знаний </h4>
+<table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Расшифровка</th>
+<th>Действие в программе</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>З</code></td>
+<td>Знания</td>
+<td>Добавляет <code>#знания</code> в комментарий вопроса</td>
+</tr>
+<tr>
+<td><code>У</code></td>
+<td>Умения</td>
+<td>Переключает тип вопроса на «Практический», добавляет <code>#умения</code> в комментарий</td>
+</tr>
+<tr>
+<td><code>Н</code></td>
+<td>Навыки</td>
+<td>Переключает тип вопроса на «Практический», добавляет <code>#навыки</code> в комментарий</td>
+</tr>
+</tbody>
+</table>
+<h4 id="коды-компетенций">Коды компетенций </h4>
+<table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ОПК-N</code></td>
+<td>Общепрофессиональная компетенция номер N (например, <code>ОПК-1</code>, <code>ОПК-2</code>)</td>
+</tr>
+<tr>
+<td><code>ПК-N</code></td>
+<td>Профессиональная компетенция номер N (например, <code>ПК-1</code>, <code>ПК-2</code>)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="примеры-заголовков">Примеры заголовков </h4>
+<table>
+<thead>
+<tr>
+<th>Заголовок</th>
+<th>Что импортируется</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>В ОПК-1 ОПК-3</code></td>
+<td>Входной контроль + компетенции ОПК-1, ОПК-3</td>
+</tr>
+<tr>
+<td><code>Т У ПК-1 ПК-2</code></td>
+<td>Текущий контроль + тип «Практический» (#умения) + компетенции ПК-1, ПК-2</td>
+</tr>
+<tr>
+<td><code>З ОПК-2</code></td>
+<td>Знания (#знания) + компетенция ОПК-2</td>
+</tr>
+<tr>
+<td><code>И Н ОПК-5</code></td>
+<td>Итоговая аттестация + тип «Практический» (#навыки) + ОПК-5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="83-процесс-парсинга-gift-файла">8.3. Процесс парсинга GIFT-файла </h3>
+<p>Парсер (метод <code>_parse_gift_file</code>) выполняет следующие действия:</p>
+<ol>
+<li>Читает файл в кодировке UTF-8.</li>
+<li>Удаляет пустые строки и строки-комментарии (начинающиеся с <code>//</code>).</li>
+<li>Для каждой строки, начинающейся с <code>::</code>, извлекает заголовок и текст вопроса с помощью регулярного выражения:<pre data-role="codeBlock" data-info="python" class="language-python python"><code>re<span class="token punctuation">.</span><span class="token keyword keyword-match">match</span><span class="token punctuation">(</span><span class="token string">r'^::(.*?)::(.*?)\s*{'</span><span class="token punctuation">,</span> line<span class="token punctuation">)</span>
+</code></pre></li>
+<li>Строки с <code>=</code> или <code>~</code> обрабатываются как варианты ответов.</li>
+<li>Текст варианта очищается от префиксов (знаки <code>=</code>, <code>~</code>, числовые веса <code>%...%</code>).</li>
+<li>Результат — список словарей:<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token punctuation">{</span>
+    <span class="token string">'type'</span><span class="token punctuation">:</span> <span class="token string">'multiple'</span><span class="token punctuation">,</span>
+    <span class="token string">'title'</span><span class="token punctuation">:</span> <span class="token string">'В ОПК-1 ОПК-3'</span><span class="token punctuation">,</span>      <span class="token comment"># заголовок (коды компетенций)</span>
+    <span class="token string">'text'</span><span class="token punctuation">:</span> <span class="token string">'Какой язык программирования...'</span><span class="token punctuation">,</span>  <span class="token comment"># текст вопроса</span>
+    <span class="token string">'options'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">'text'</span><span class="token punctuation">:</span> <span class="token string">'Python'</span><span class="token punctuation">,</span> <span class="token string">'isCorrect'</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token string">'text'</span><span class="token punctuation">:</span> <span class="token string">'Java'</span><span class="token punctuation">,</span> <span class="token string">'isCorrect'</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></li>
+</ol>
+<h3 id="84-процесс-импорта-вопроса">8.4. Процесс импорта вопроса </h3>
+<p>Для каждого вопроса программа выполняет:</p>
+<ol>
+<li>Нажимает кнопку «Добавить вопрос» на странице ISS</li>
+<li>Вводит текст вопроса в textarea</li>
+<li>Обрабатывает коды компетенций из заголовка (режим <code>auto</code>):
+<ul>
+<li>Ставит чекбоксы соответствующих типов контроля</li>
+<li>При кодах <code>У</code> или <code>Н</code> переключает вид вопроса на «Практический»</li>
+<li>Заполняет поле комментария хештегами (<code>#знания</code>, <code>#умения</code>, <code>#навыки</code>)</li>
+</ul>
+</li>
+<li>Нажимает кнопку «Сохранить»</li>
+<li>Если у вопроса есть варианты ответов:
+<ul>
+<li>Нажимает кнопку «Ответы» (открывает модальное окно)</li>
+<li>Для каждого варианта: «Добавить» → ввод текста → (отметка «Правильный ответ») → «Сохранить»</li>
+<li>Нажимает «Закрыть» (закрывает модальное окно)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="9-безопасность-и-лицензирование">9. Безопасность и лицензирование </h2>
+<h3 id="91-хранение-учётных-данных">9.1. Хранение учётных данных </h3>
+<ul>
+<li>Логин и пароль могут быть указаны в файле <code>.env</code> в открытом виде.</li>
+<li><strong>Рекомендация</strong>: не храните <code>.env</code> в сетевых папках или репозиториях.</li>
+</ul>
+<h3 id="92-сетевое-взаимодействие">9.2. Сетевое взаимодействие </h3>
+<p>Программа работает только с адресом <code>https://iss.vyatsu.ru/</code>. Других сетевых запросов не выполняет (за исключением открытия popup-окна генератора <code>https://n8n.markovrv.ru/</code> при нажатии кнопки «Сгенерировать файл»).</p>
+<h3 id="93-безопасность-браузера">9.3. Безопасность браузера </h3>
+<ul>
+<li>Программа запускает Chrome с пользовательским User-Agent.</li>
+<li>Браузер работает в режиме <code>headless=False</code> (окно видно пользователю).</li>
+<li>После завершения работы браузер закрывается автоматически.</li>
+</ul>
+<h3 id="94-обработка-ошибок">9.4. Обработка ошибок </h3>
+<ul>
+<li>Все исключения перехватываются и отображаются в интерфейсе и журнале.</li>
+<li>При ошибке авторизации программа сбрасывает состояние и позволяет повторить попытку.</li>
+<li>При ошибке импорта программа возвращает на основную вкладку ISS.</li>
+</ul>
+<h2 id="10-журналирование-и-диагностика">10. Журналирование и диагностика </h2>
+<h3 id="101-встроенный-журнал">10.1. Встроенный журнал </h3>
+<p>Панель «Журнал операций» в нижней части главного окна отображает все операции в реальном времени.</p>
+<h4 id="типы-сообщений">Типы сообщений </h4>
+<table>
+<thead>
+<tr>
+<th>Префикс</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>FOS Importer v3.0 готов к работе</code></td>
+<td>Приветственное сообщение при запуске</td>
+</tr>
+<tr>
+<td><code>Открываем сайт...</code></td>
+<td>Начало загрузки страницы</td>
+</tr>
+<tr>
+<td><code>Авторизуемся...</code></td>
+<td>Ввод учётных данных</td>
+</tr>
+<tr>
+<td><code>Выбираем раздел ФОС...</code></td>
+<td>Навигация к разделу</td>
+</tr>
+<tr>
+<td><code>Загружаем список кафедр...</code></td>
+<td>Загрузка данных</td>
+</tr>
+<tr>
+<td><code>✅ Авторизация успешна</code></td>
+<td>Успешная авторизация</td>
+</tr>
+<tr>
+<td><code>Выбрана кафедра: ...</code></td>
+<td>Выбор параметра</td>
+</tr>
+<tr>
+<td><code>✅ Специальности загружены</code></td>
+<td>Данные загружены</td>
+</tr>
+<tr>
+<td><code>Импорт вопроса 3/15</code></td>
+<td>Прогресс импорта</td>
+</tr>
+<tr>
+<td><code>✅ Импорт успешно завершен</code></td>
+<td>Успешное завершение</td>
+</tr>
+<tr>
+<td><code>❌ Ошибка: ...</code></td>
+<td>Ошибка операции</td>
+</tr>
+<tr>
+<td><code>⏹ Импорт остановлен пользователем</code></td>
+<td>Прерывание пользователем</td>
+</tr>
+<tr>
+<td><code>🧪 Тестовый режим активирован</code></td>
+<td>Вход в тестовый режим</td>
+</tr>
+</tbody>
+</table>
+<h3 id="102-статус-бар">10.2. Статус-бар </h3>
+<p>Строка состояния в блоке «Статус операции» отображает текущее действие. Значение обновляется синхронно с журналом.</p>
+<h3 id="103-диагностика-проблем">10.3. Диагностика проблем </h3>
+<p>Для диагностики:</p>
+<ol>
+<li>Наблюдайте за сообщениями в журнале операций.</li>
+<li>Обратите внимание на состояние браузера Chrome (окно должно быть видимым).</li>
+<li>При ошибках проверьте валидность учётных данных и доступность сайта ISS.</li>
+<li>При ошибках парсинга проверьте формат GIFT-файла (см. Приложение A).</li>
+</ol>
+<h2 id="11-устранение-неполадок">11. Устранение неполадок </h2>
+<h3 id="111-ошибки-запуска">11.1. Ошибки запуска </h3>
+<table>
+<thead>
+<tr>
+<th>Проблема</th>
+<th>Причина</th>
+<th>Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EXE не запускается</td>
+<td>Антивирус блокирует</td>
+<td>Добавьте <code>FOSImporter.exe</code> в исключения антивируса</td>
+</tr>
+<tr>
+<td>EXE не запускается</td>
+<td>Отсутствует .env</td>
+<td>Создайте <code>.env</code> рядом с EXE (см. раздел 7)</td>
+</tr>
+<tr>
+<td>Окно не появляется</td>
+<td>Недостаточно прав</td>
+<td>Запустите от имени администратора</td>
+</tr>
+</tbody>
+</table>
+<h3 id="112-ошибки-авторизации">11.2. Ошибки авторизации </h3>
+<table>
+<thead>
+<tr>
+<th>Проблема</th>
+<th>Причина</th>
+<th>Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ошибка инициализации браузера</code></td>
+<td>Chrome не найден по указанному пути</td>
+<td>Проверьте <code>CHROME_PATH</code> в <code>.env</code></td>
+</tr>
+<tr>
+<td><code>Ошибка авторизации</code></td>
+<td>Неверный логин/пароль</td>
+<td>Проверьте учётные данные в ISS</td>
+</tr>
+<tr>
+<td>Сайт не открывается</td>
+<td>Нет сети / сайт недоступен</td>
+<td>Проверьте интернет-соединение, попробуйте открыть <code>https://iss.vyatsu.ru/kaf/</code> вручную</td>
+</tr>
+<tr>
+<td>Авторизация зависает</td>
+<td>Медленный интернет</td>
+<td>Подождите или перезапустите программу</td>
+</tr>
+<tr>
+<td>Кафедры не загрузились</td>
+<td>Структура сайта изменилась</td>
+<td>Обратитесь к разработчику</td>
+</tr>
+</tbody>
+</table>
+<h3 id="113-ошибки-импорта">11.3. Ошибки импорта </h3>
+<table>
+<thead>
+<tr>
+<th>Проблема</th>
+<th>Причина</th>
+<th>Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ошибка чтения GIFT-файла</code></td>
+<td>Файл не найден или повреждён</td>
+<td>Проверьте путь к файлу и его кодировку (UTF-8)</td>
+</tr>
+<tr>
+<td>Вопрос не импортируется</td>
+<td>Некорректный формат GIFT</td>
+<td>Проверьте синтаксис: <code>::Заголовок::Текст{</code></td>
+</tr>
+<tr>
+<td>Ответы не добавляются</td>
+<td>Неправильные разделители</td>
+<td>Используйте <code>=</code> для правильных и <code>~</code> для неправильных ответов</td>
+</tr>
+<tr>
+<td>Импорт прерывается на середине</td>
+<td>Сайт вернул ошибку / сессия истекла</td>
+<td>Повторите авторизацию и импорт</td>
+</tr>
+<tr>
+<td>Компетенции не проставляются</td>
+<td>Неверные коды в заголовке</td>
+<td>Проверьте коды (см. Приложение B)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="114-ошибки-браузера">11.4. Ошибки браузера </h3>
+<table>
+<thead>
+<tr>
+<th>Проблема</th>
+<th>Причина</th>
+<th>Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Chrome не открывается</td>
+<td>Неверный путь в <code>CHROME_PATH</code></td>
+<td>Укажите правильный путь. Используйте <code>/</code> вместо <code>\</code></td>
+</tr>
+<tr>
+<td>Страница не загружается</td>
+<td>Блокировка антивирусом / брандмауэром</td>
+<td>Проверьте настройки безопасности</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12-обновления-и-обслуживание">12. Обновления и обслуживание </h2>
+<h3 id="121-обновление-fosimporterexe">12.1. Обновление FOSImporter.exe </h3>
+<p>При выходе новой версии:</p>
+<ol>
+<li>Замените <code>FOSImporter.exe</code> на новый файл.</li>
+<li>Убедитесь, что файл <code>.env</code> остался на месте.</li>
+<li>Запустите программу и выполните тестовый импорт.</li>
+</ol>
+<h3 id="122-обновление-chrome">12.2. Обновление Chrome </h3>
+<p>Программа использует системный Chrome. При обновлении Chrome путь может измениться — проверьте <code>CHROME_PATH</code> в <code>.env</code>.</p>
+<h2 id="13-часто-задаваемые-вопросы-faq">13. Часто задаваемые вопросы (FAQ) </h2>
+<p><strong>В: Нужен ли Python для запуска FOSImporter.exe?</strong><br>
+О: Нет. EXE-файл полностью автономен — все зависимости встроены.</p>
+<p><strong>В: Можно ли использовать программу без интернета?</strong><br>
+О: Нет. Программа требует доступ к <code>https://iss.vyatsu.ru/</code> для авторизации и импорта вопросов.</p>
+<p><strong>В: Работает ли программа на macOS или Linux?</strong><br>
+О: Нет. Программа работает только на Windows 10/11 (64-bit).</p>
+<p><strong>В: Сколько вопросов можно импортировать за раз?</strong><br>
+О: Ограничений со стороны программы нет. Ограничение определяется системой ISS и стабильностью соединения. Рекомендуется импортировать партиями по 50-100 вопросов.</p>
+<p><strong>В: Можно ли импортировать вопросы с изображениями?</strong><br>
+О: Нет, текущая версия поддерживает только текстовые вопросы и текстовые варианты ответов.</p>
+<p><strong>В: Что делать, если сессия истекла во время импорта?</strong><br>
+О: Остановите импорт кнопкой «Остановить», перезапустите авторизацию и начните импорт заново. Уже импортированные вопросы будут в системе — проверьте их вручную и удалите дубликаты при необходимости.</p>
+<p><strong>В: Можно ли запустить несколько экземпляров программы одновременно?</strong><br>
+О: Технически возможно, но не рекомендуется, так как каждый экземпляр открывает свой браузер и может конфликтовать при авторизации в ISS.</p>
+<p><strong>В: Как изменить путь к Chrome?</strong><br>
+О: Отредактируйте параметр <code>CHROME_PATH</code> в файле <code>.env</code>. Используйте прямой слеш <code>/</code> как разделитель.</p>
+<p><strong>В: Программа не видит мой Chrome, что делать?</strong><br>
+О: Найдите путь к <code>chrome.exe</code> (ПКМ на ярлыке Chrome → Свойства → Объект). Пропишите путь в <code>CHROME_PATH</code> в <code>.env</code>.</p>
+<p><strong>В: Что означает кнопка «Сгенерировать файл»?</strong><br>
+О: Она открывает веб-форму генератора GIFT-файлов в отдельном окне Chrome. Через эту форму можно создать GIFT-файл, который затем будет загружен через «Обзор...».</p>
+<h2 id="14-примеры-сценариев-использования">14. Примеры сценариев использования </h2>
+<h3 id="141-импорт-теста-по-программированию">14.1. Импорт теста по программированию </h3>
+<p><strong>Задача</strong>: Загрузить 20 вопросов по языку Python в дисциплину «Программирование».</p>
+<ol>
+<li>Подготовьте GIFT-файл <code>python_test.gift</code>:<pre data-role="codeBlock" data-info="" class="language-text"><code>::З ОПК-1::Какой тип данных используется для хранения целых чисел?{
+    =int
+    ~float
+    ~str
+    ~bool
+}
+::У ОПК-1::Напишите функцию для вычисления факториала числа{
+}
+</code></pre></li>
+<li>Запустите <code>FOSImporter.exe</code>.</li>
+<li>Введите логин и пароль, нажмите «Авторизация».</li>
+<li>Выберите кафедру → специальность → предмет «Программирование».</li>
+<li>Нажмите «Обзор...» и выберите <code>python_test.gift</code>.</li>
+<li>Нажмите «Начать импорт».</li>
+<li>Дождитесь завершения (статус покажет «Импорт успешно завершен»).</li>
+</ol>
+<h3 id="142-пакетный-импорт-нескольких-файлов">14.2. Пакетный импорт нескольких файлов </h3>
+<p><strong>Задача</strong>: Последовательно импортировать 3 файла в один предмет.</p>
+<ol>
+<li>Авторизуйтесь и выберите параметры (кафедра, специальность, предмет).</li>
+<li>Выберите первый файл → «Начать импорт» → дождитесь завершения.</li>
+<li>Выберите второй файл → «Начать импорт» → дождитесь завершения.</li>
+<li>Выберите третий файл → «Начать импорт» → дождитесь завершения.</li>
+</ol>
+<blockquote>
+<p>Примечание: параметры (кафедра, специальность, предмет) сохраняются между импортами. Повторная авторизация не требуется.</p>
+</blockquote>
+<h3 id="143-тестирование-интерфейса-без-авторизации">14.3. Тестирование интерфейса без авторизации </h3>
+<p><strong>Задача</strong>: Проверить, как выглядит программа, без реального доступа к ISS.</p>
+<ol>
+<li>Запустите <code>FOSImporter.exe</code>.</li>
+<li>Нажмите кнопку <strong>Тестовый режим</strong>.</li>
+<li>Все поля заполнятся тестовыми данными.</li>
+<li>Нажмите «Начать импорт» — будет запущена симуляция импорта.</li>
+<li>В журнале появятся записи о «симуляции» импорта.</li>
+</ol>
+<h3 id="144-создание-gift-файла-через-генератор">14.4. Создание GIFT-файла через генератор </h3>
+<p><strong>Задача</strong>: Создать GIFT-файл с помощью веб-генератора.</p>
+<ol>
+<li>Авторизуйтесь в программе.</li>
+<li>Нажмите кнопку <strong>Сгенерировать файл</strong>.</li>
+<li>В открытом окне заполните форму генератора.</li>
+<li>Скачайте сгенерированный GIFT-файл.</li>
+<li>Вернитесь в главное окно FOS Importer.</li>
+<li>Нажмите «Обзор...» и выберите скачанный файл.</li>
+<li>Нажмите «Начать импорт».</li>
+</ol>
+<h2 id="15-форматы-вывода-и-конвертация">15. Форматы вывода и конвертация </h2>
+<h3 id="151-входные-форматы">15.1. Входные форматы </h3>
+<table>
+<thead>
+<tr>
+<th>Формат</th>
+<th>Расширение</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GIFT</td>
+<td><code>.gift</code></td>
+<td>Единственный поддерживаемый формат входных данных</td>
+</tr>
+</tbody>
+</table>
+<h3 id="152-конвертация-в-gift">15.2. Конвертация в GIFT </h3>
+<p>Если вопросы хранятся в другом формате, их необходимо преобразовать в GIFT вручную или с помощью инструментов:</p>
+<ul>
+<li><strong>Из Moodle XML</strong>: существуют конвертеры Moodle XML → GIFT (например, плагины Moodle или онлайн-сервисы)</li>
+<li><strong>Из Excel/CSV</strong>: вручную или с помощью скрипта, формирующего строки GIFT</li>
+<li><strong>Из Word</strong>: вручную, копируя текст и форматируя по синтаксису GIFT</li>
+</ul>
+<h3 id="153-выходные-данные">15.3. Выходные данные </h3>
+<p>Программа не создаёт выходных файлов. Результат импорта — данные, добавленные непосредственно в систему ISS ВятГУ.</p>
+<p>Проверить результат можно:</p>
+<ul>
+<li>В веб-интерфейсе ISS после завершения импорта</li>
+<li>По сообщениям в журнале операций программы</li>
+</ul>
+<h3 id="16-контакты">16. Контакты </h3>
+<p>По вопросам, связанным с работой программы, обращайтесь к автору: <strong>Марков Р. В.</strong></p>
+<h2 id="17-приложение-a-структура-gift-файла">17. Приложение A: Структура GIFT-файла </h2>
+<h3 id="a1-общий-формат">A.1. Общий формат </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>// Комментарий (необязательно)
+::Код1 Код2::Текст вопроса{
+    =Правильный ответ
+    ~Неправильный ответ
+}
+
+::Код3::Другой вопрос{
+}
+</code></pre><h3 id="a2-элементы-синтаксиса">A.2. Элементы синтаксиса </h3>
+<table>
+<thead>
+<tr>
+<th>Синтаксис</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>// текст</code></td>
+<td>Однострочный комментарий (пропускается парсером)</td>
+</tr>
+<tr>
+<td><code>:: текст ::</code></td>
+<td>Заголовок вопроса (коды компетенций)</td>
+</tr>
+<tr>
+<td><code>{</code></td>
+<td>Начало блока ответов</td>
+</tr>
+<tr>
+<td><code>}</code></td>
+<td>Конец блока ответов</td>
+</tr>
+<tr>
+<td><code>= ответ</code></td>
+<td>Правильный вариант ответа</td>
+</tr>
+<tr>
+<td><code>~ ответ</code></td>
+<td>Неправильный вариант ответа</td>
+</tr>
+<tr>
+<td><code>%вес% ответ</code></td>
+<td>Ответ с весом (парсер удаляет префикс <code>%...%</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a3-типы-вопросов">A.3. Типы вопросов </h3>
+<table>
+<thead>
+<tr>
+<th>Тип</th>
+<th>Формат</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>С выбором ответа</td>
+<td>Блок <code>{</code> содержит <code>=</code> и/или <code>~</code></td>
+<td><code>::З::2+2?{ =4 ~3 ~5 }</code></td>
+</tr>
+<tr>
+<td>Открытый (без вариантов)</td>
+<td>Блок <code>{</code> пустой</td>
+<td><code>::У::Напишите код{ }</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="a4-требования-к-файлу">A.4. Требования к файлу </h3>
+<ul>
+<li>Кодировка: <strong>UTF-8</strong> (обязательно)</li>
+<li>Каждый вопрос — отдельный блок <code>::...::{ ... }</code></li>
+<li>Пустые строки между вопросами допускаются (и рекомендуются для читаемости)</li>
+<li>Строки-комментарии начинаются с <code>//</code></li>
+<li>Файлы с расширением <code>.gift</code> или <code>.txt</code></li>
+</ul>
+<h3 id="a5-пример-файла">A.5. Пример файла </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>// Вопросы по Python - Блок 1
+::З ОПК-2::Какой метод Pandas загружает CSV-файл?{
+    =pd.read_csv()
+    ~pd.load_csv()
+    ~pd.open_csv()
+    ~pd.get_csv()
+}
+
+::У ОПК-2::Напишите код для удаления строк с NaN{
+}
+
+::Т Н ОПК-3 ПК-1::Какой алгоритм используется для кластеризации?{
+    =K-means
+    ~Random Forest
+    ~Линейная регрессия
+}
+</code></pre><hr>
+<h2 id="18-приложение-b-расшифровка-кодов-компетенций">18. Приложение B: Расшифровка кодов компетенций </h2>
+<h3 id="b1-коды-типа-контроля">B.1. Коды типа контроля </h3>
+<p>Используются в заголовке GIFT-вопроса. При импорте программа отмечает соответствующий чекбокс в системе ISS.</p>
+<table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Полное название</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>В</code></td>
+<td>Входной контроль</td>
+<td>Проверка начального уровня знаний</td>
+</tr>
+<tr>
+<td><code>Т</code></td>
+<td>Текущий контроль</td>
+<td>Проверка в процессе обучения</td>
+</tr>
+<tr>
+<td><code>О</code></td>
+<td>Остаточные знания</td>
+<td>Проверка остаточных знаний</td>
+</tr>
+<tr>
+<td><code>П</code></td>
+<td>Промежуточная аттестация</td>
+<td>Промежуточная проверка</td>
+</tr>
+<tr>
+<td><code>И</code></td>
+<td>Итоговая аттестация</td>
+<td>Финальная проверка</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b2-коды-типа-знанийуменийнавыков">B.2. Коды типа знаний/умений/навыков </h3>
+<table>
+<thead>
+<tr>
+<th>Код</th>
+<th>Полное название</th>
+<th>Действие при импорте</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>З</code></td>
+<td>Знания</td>
+<td>Добавляет <code>#знания</code> в комментарий вопроса</td>
+</tr>
+<tr>
+<td><code>У</code></td>
+<td>Умения</td>
+<td>Устанавливает вид вопроса «Практический», добавляет <code>#умения</code> в комментарий</td>
+</tr>
+<tr>
+<td><code>Н</code></td>
+<td>Навыки</td>
+<td>Устанавливает вид вопроса «Практический», добавляет <code>#навыки</code> в комментарий</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b3-коды-компетенций">B.3. Коды компетенций </h3>
+<table>
+<thead>
+<tr>
+<th>Шаблон</th>
+<th>Описание</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ОПК-N</code></td>
+<td>Общепрофессиональная компетенция №N</td>
+<td><code>ОПК-1</code>, <code>ОПК-2</code>, <code>ОПК-3</code></td>
+</tr>
+<tr>
+<td><code>ПК-N</code></td>
+<td>Профессиональная компетенция №N</td>
+<td><code>ПК-1</code>, <code>ПК-2</code>, <code>ПК-3</code></td>
+</tr>
+<tr>
+<td><code>ОПК-5</code></td>
+<td>ОПК номер 5</td>
+<td><code>ОПК-5</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="b4-комбинации-кодов">B.4. Комбинации кодов </h3>
+<p>Коды в заголовке разделяются пробелами и могут комбинироваться в любом порядке:</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>::Код1 Код2 Код3::Текст вопроса{
+    ...
+}
+</code></pre><h4 id="примеры-комбинаций">Примеры комбинаций </h4>
+<table>
+<thead>
+<tr>
+<th>Заголовок</th>
+<th>Расшифровка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>З ОПК-2</code></td>
+<td>Знания, компетенция ОПК-2</td>
+</tr>
+<tr>
+<td><code>В ОПК-1 ОПК-3</code></td>
+<td>Входной контроль, компетенции ОПК-1 и ОПК-3</td>
+</tr>
+<tr>
+<td><code>Т У ПК-1 ПК-2</code></td>
+<td>Текущий контроль, умения (практический вопрос), компетенции ПК-1 и ПК-2</td>
+</tr>
+<tr>
+<td><code>И Н ОПК-5</code></td>
+<td>Итоговая аттестация, навыки (практический вопрос), компетенция ОПК-5</td>
+</tr>
+<tr>
+<td><code>П З У ОПК-2</code></td>
+<td>Промежуточная аттестация, знания, умения, ОПК-2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><em>Руководство пользователя FOS Importer v3.0. Автор: Марков Р. В.</em></p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
