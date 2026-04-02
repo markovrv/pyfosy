@@ -3,6 +3,7 @@ venv
 .env
 *.gift
 build/
+dist/
 *.spec.bak
 .kilo
 __pycache__/
